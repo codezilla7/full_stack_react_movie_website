@@ -1,0 +1,443 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "Title": "The Dictator",
+      "Year": "2012",
+      "Runtime": "1h 43min",
+      "Poster": "https://www.joblo.com/wp-content/uploads/2012/04/dictator-face-poster-1-400x600.jpg",
+      "Description": "Aladeen, a brutal dictator, travels to New York in order to address the United Nations Security Council. However, his plans go south when a hitman hired by his uncle, Tamir, kidnaps him.",
+      "Category": "Comedy"
+    },
+    {
+      "id": 2,
+      "Title": "Black Adam",
+      "Year": "2022",
+      "Runtime": "2h 5min",
+      "Poster": "https://i0.wp.com/www.artofvfx.com/wp-content/uploads/2022/09/black_adam_ver10_xxlg.jpg?fit=1280%2C1897&ssl=1",
+      "Description": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone.",
+      "Category": "Action"
+    },
+    {
+      "id": 3,
+      "Title": "Doctor Strange",
+      "Year": "2016",
+      "Runtime": "115 min",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
+      "Description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc",
+      "Category": "Science fiction"
+    },
+    {
+      "id": 4,
+      "Title": "John Wick",
+      "Year": "2014",
+      "Runtime": "101 min",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_SX300.jpg",
+      "Description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc",
+      "Category": "Action"
+    },
+    {
+      "id": 5,
+      "Title": "Justice League",
+      "Year": "2018",
+      "Runtime": "123 min",
+      "Poster": "https://i.ibb.co/Zd51z5c/justice-league.jpg",
+      "Description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc",
+      "Category": "Action"
+    },
+    {
+      "Title": "Joker",
+      "Year": "2019",
+      "Runtime": "104 min",
+      "Poster": "https://c4.wallpaperflare.com/wallpaper/675/275/718/joker-2019-movie-joker-joaquin-phoenix-actor-men-hd-wallpaper-preview.jpg",
+      "Description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc",
+      "Category": "Thriller",
+      "id": 6
+    },
+    {
+      "Title": "Black Panther: Wakanda Forever",
+      "Year": "2022",
+      "Runtime": "2h 41min",
+      "Poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSzNzI5w3iKM-KdasCDvlOEUgD2ojlf7IW5b-e3tqFmhW2JRSCz",
+      "Description": "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to embrace their next chapter, the heroes must band together with Nakia and Everett Ross to forge a new path for their beloved kingdom.",
+      "Category": "Science fiction",
+      "id": 7
+    },
+    {
+      "Title": "Spider-Man: No Way Home",
+      "Year": "2021",
+      "Runtime": "2h 21min",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQtU4DiRFRr0155DjcHlSsgJy9opzt_MPMJmHfG4MEa31-A82Xb",
+      "Description": "Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker. However, Strange's spell goes horribly wrong, leading to unwanted guests entering their universe.",
+      "Category": "Adventure",
+      "id": 8
+    },
+    {
+      "Title": "Doctor Strange in the Multiverse of Madness",
+      "Year": "2022",
+      "Runtime": "2h 6min",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5IuxfEt-WmUIrpJldszdRJFfTubSEeQVMVNuv63Z0PNfvbWV",
+      "Description": "Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse.",
+      "Category": "Adventure",
+      "id": 9
+    },
+    {
+      "Title": "Thor: Love and Thunder",
+      "Year": "2022",
+      "Runtime": "1h 59min",
+      "Poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRHXV5at6mvLIF852fvIA5jeUi6bVYs8swuCPUCRWdRxWp0sr5Q",
+      "Description": "Thor embarks on a journey unlike anything he's ever faced -- a quest for inner peace. However, his retirement gets interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods. To combat the threat, Thor enlists the help of King Valkyrie, Korg and ex-girlfriend Jane Foster, who -- to his surprise -- inexplicably wields his magical hammer. Together, they set out on a harrowing cosmic adventure to uncover the mystery of the God Butcher's vengeance.",
+      "Category": "",
+      "id": 10
+    },
+    {
+      "Title": "Wednesday",
+      "Year": "2022",
+      "Runtime": "Season 1",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcMvzTK3P4utQeyTN-LXqnSI0RVoqvqxT50J6jbX61_vBydTUS",
+      "Description": "While attending Nevermore Academy, Wednesday Addams attempts to master her emerging psychic ability, thwart a killing spree and solve the mystery that embroiled her parents 25 years ago.",
+      "Category": "Thriller",
+      "id": 11
+    },
+    {
+      "Title": "The Sandman",
+      "Year": "2022",
+      "Runtime": "Season 1",
+      "Poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQSEfS1usmri4dvCUiSMRWHRhOgQSAToBUrIwVsfFFslA0k8yZy",
+      "Description": "When the Sandman, aka Dream, the cosmic being who controls all dreams, is captured and held prisoner for more than a century, he must journey across different worlds and timelines to fix the chaos his absence has caused.",
+      "Category": "Drama",
+      "id": 12
+    },
+    {
+      "Title": "Enola Holmes 2",
+      "Year": "2022 ",
+      "Runtime": "2h 11m",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6LbxemloEsyPQXRWvOUwj9fexSbztvNExqt38KoMZu5Bv2Zf7",
+      "Description": "Enola Holmes takes on her first case as a detective, but to unravel the mystery of a missing girl, she'll need some help from friends -- and brother Sherlock.",
+      "Category": "Action",
+      "id": 13
+    },
+    {
+      "Title": "Carter",
+      "Year": "2022 ",
+      "Runtime": "2h 12m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqwxRYxwsheC-nANognu6z9Va98XLoQLQ-xutuSAt713OufDyF",
+      "Description": "A man wakes up missing his memories. Directed by a mysterious voice from a device in his ear, he sets off on a hostage rescue mission rife with danger.",
+      "Category": "Action",
+      "id": 14
+    },
+    {
+      "Title": "Glass Onion: A Knives Out Mystery",
+      "Year": "2022 ",
+      "Runtime": "2h 19m",
+      "Poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSZPYRCww1RGQzJxZRG2F5XKPyT30FR3O6dPOM719hee14DQC2n",
+      "Description": "Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Benoit Blanc is put on the case.",
+      "Category": "Mystery",
+      "id": 15
+    },
+    {
+      "Title": "The Gray Man",
+      "Year": "2022",
+      "Runtime": "2h 2m",
+      "Poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTCR9FSMDFVM4V_l6fcJRssT-oPvAyDpjqAxZWYTyySqKh7RgLL",
+      "Description": "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague.",
+      "Category": "Action",
+      "id": 16
+    },
+    {
+      "Title": "The Man from Toronto",
+      "Year": "2022",
+      "Runtime": "1h 52m",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTv0xykcftQCSo8e6O-0jnKKWv-MbcMqv31CXlf5b3leZ-H0Foy",
+      "Description": "A case of mistaken identity forces a bumbling entrepreneur to team up with a notorious assassin in hopes of staying alive.",
+      "Category": "Comedy",
+      "id": 17
+    },
+    {
+      "Title": "Uncharted",
+      "Year": "2022 ",
+      "Runtime": "1h 56m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAT4deET55wX0MzpBp45_7201ZndSAI8m2W52rNVeVmEbEgEW",
+      "Description": "Victor Sullivan recruits Nathan Drake to help him find the lost fortune of Ferdinand Magellan. However, they face competition from Santiago Moncada, who believes that the treasure belongs to him.",
+      "Category": "Adventure",
+      "id": 18
+    },
+    {
+      "Title": "The Takedown",
+      "Year": "2022",
+      "Runtime": "1h 59m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv_rxsJxllHf28ZC4btI80JRcwWmSHLcUqcgRZXh5Vlg_u6OJx",
+      "Description": "Ousmane and François are two cops with very different styles. The unlikely pair are reunited once again for a new investigation. What seemed to be a simple drug deal turns out to be a high-scale criminal case wrapped in danger.",
+      "Category": "",
+      "id": 19
+    },
+    {
+      "Title": "The Adam Project",
+      "Year": "2022 ",
+      "Runtime": "1h 46m",
+      "Poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSGZMvynxlczttOzspLoBEulfsZHR4kiKQ_k-oixot8HxNz1xds",
+      "Description": "After accidentally crash-landing in 2022, time-traveling fighter pilot Adam Reed teams up with his 12-year-old self for a mission to save the future.",
+      "Category": "Drama",
+      "id": 20
+    },
+    {
+      "Title": "Satria Dewa: Gatotkaca",
+      "Year": "2022 ",
+      "Runtime": "2h 9m",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOWEzN2IxOTktMzBjMS00ZWU1LWI0OTgtZjViNWYxOWY1MjUxXkEyXkFqcGdeQXVyNzY4NDQzNTg@._V1_.jpg",
+      "Description": "Legends collide as young Yuda wrestles with his newfound godlike powers, defending his world in an endless battle against ancient and powerful evils.",
+      "Category": "Drama",
+      "id": 21
+    },
+    {
+      "Title": "Slumberland",
+      "Year": "2022 ",
+      "Runtime": "1h 57m",
+      "Poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQO6DGIqeEH67Gs9GWiN-qXDo7pqrzY3fKz-5ElQ3zN9eUlY5Et",
+      "Description": "Slumberland is a 2022 American fantasy adventure film directed by Francis Lawrence and written by David Guion and Michael Handelman.",
+      "Category": "Adventure",
+      "id": 22
+    },
+    {
+      "Title": "Choose or Die",
+      "Year": "2022 ",
+      "Runtime": " 1h 24m",
+      "Poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZZyA-5FM_Tbc9UExZK3MBra8jygT9QkL0Hhxo8B56YSAJfUnN",
+      "Description": "A broke student who plays an obscure 1980s survival computer game in pursuit of an unclaimed $100,000 prize. After a series of unexpectedly terrifying moments, she soon realises she's no longer playing for the money, but for her own life.",
+      "Category": "Thriller",
+      "id": 23
+    },
+    {
+      "Title": "Seoul Vibe",
+      "Year": "2022 ",
+      "Runtime": "2h 20m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubZ63q10fVz454qN0lR2w3iXyYe8nGiRM9cFSpa7IMN7rXYzX",
+      "Description": "In the days leading up to the 1988 Seoul Olympics, a ragtag team of drivers and mechanics goes undercover to dismantle a massive money-laundering ring that could jeapordise the whole event.",
+      "Category": "Mystery",
+      "id": 24
+    },
+    {
+      "Title": "Day Shift",
+      "Year": "2022 ",
+      "Runtime": "1h 54m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDcucAk5y5aFz9dnAdTZ7olHRhyNdz3dTLjmQdoFXmCRy1HYx",
+      "Description": "A hardworking dad out to provide for his daughter uses a boring pool-cleaning job as a front for his real gig: hunting and killing vampires.",
+      "Category": "",
+      "id": 25
+    },
+    {
+      "Title": "The Pale Blue Eye",
+      "Year": "2022 ",
+      "Runtime": " 2h 8m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA_g7o3MK19xx1sF3whIvhjCobvmUlo5BKKFCJr4YHr2q8Tp6r",
+      "Description": "Veteran detective Augustus Landor investigates a series of grisly murders with the help of a young cadet who will eventually go on to become the world-famous author Edgar Allan Poe.",
+      "Category": "Crime",
+      "id": 26
+    },
+    {
+      "Title": "Stealing Raden Saleh",
+      "Year": "2022 ",
+      "Runtime": "2h 34m",
+      "Poster": "https://upload.wikimedia.org/wikipedia/id/e/ea/Poster_teatrikal_Mencuri_Raden_Saleh.jpg",
+      "Description": "To save his father, a master forger sets out to steal an invaluable painting with the help of a motley crew of specialists.",
+      "Category": "Drama",
+      "id": 27
+    },
+    {
+      "Title": "White Noise",
+      "Year": "2022 ",
+      "Runtime": "2h 16m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0AFDJNuVs_t0_KqoFD7eNM6z5T-sCCTt_ex5sG9XlAs9TBnZb",
+      "Description": "White Noise is a 2022 absurdist comedy-drama film, written and directed by Noah Baumbach, adapted from the 1985 novel with the same title by Don DeLillo.",
+      "Category": "Comedy",
+      "id": 28
+    },
+    {
+      "Title": "Troll",
+      "Year": "2022 ",
+      "Runtime": "1h 41m",
+      "Poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHvaRbcer1ya3BIvzWC73YG3GxuPrQUFNhiJqGRMm74qpAL8km",
+      "Description": "When an ancient troll is awakened in a Norwegian mountain, a ragtag group of heroes must come together to try and stop it from wreaking deadly havoc.",
+      "Category": "Mystery",
+      "id": 29
+    },
+    {
+      "Title": "Pinocchio",
+      "Year": "2022",
+      "Runtime": "1h 54m",
+      "Poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBTroKIU3vBzixwr-8F_ePdw5sqPLjRcf5t6Mj9hCU4wVUQV5e",
+      "Description": "Guillermo del Toro's Pinocchio ... Reimagined classic tale of the fabled wooden boy with a whimsical tour de force that finds.",
+      "Category": "Fantasy",
+      "id": 30
+    },
+    {
+      "Title": "Matilda",
+      "Year": "2022 ",
+      "Runtime": "1h 57m",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSDNhOJrEpRgUfdO3-V0YtFEj2A-sNpuLtCgHptc2WFAAcPYMUp",
+      "Description": "Matilda, an extraordinary girl armed with a sharp mind and a vivid imagination, dares to take a stand against her oppressive parents and head teacher to change her story with miraculous results.",
+      "Category": "Fantasy",
+      "id": 31
+    },
+    {
+      "Title": "Nanny",
+      "Year": "2022 ",
+      "Runtime": "1h 37m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRr3n_R-8ptLGL2HROqgNn7z9f4pppI8FTOrDynUyN&usqp=CAE&s",
+      "Description": "An African woman hopes her new job as a nanny will help bring her young son to the United States. However, when a violent presence begins to invade both her dreams and reality, it threatens to destroy everything she's fought for.",
+      "Category": "Horror",
+      "id": 32
+    },
+    {
+      "Title": "About Fate",
+      "Year": "2022 ",
+      "Runtime": "1h 40m",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRAY9fZLvpsaBx0uMLrJICudRpqZsbibV48nsZlXaC3n3h65Bwz",
+      "Description": "Two strangers believe in love but never seem to be able to find its true meaning. In a wild twist of events, fate puts each in the other's path on one stormy New Year's Eve.",
+      "Category": "Drama",
+      "id": 33
+    },
+    {
+      "Title": "Ivanna",
+      "Year": "2022 ",
+      "Runtime": "1h 43m",
+      "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8wERPqlWhqo_cmF7iW_3RTuwsUE9PbADv-9uuI1pAqkcXXN8",
+      "Description": "Ambar and his family are terrorised when they celebrate Lebaran in the Bandung area. Ambar, a beautiful young woman who has limited vision, is able to see things that other people can't see.",
+      "Category": "Thriller",
+      "id": 34
+    },
+    {
+      "Title": "All Quiet on the Western Front",
+      "Year": "2022 ",
+      "Runtime": "2h 23m",
+      "Poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTHrQuF9sH0zTeKhScEcMIFa3fm_mICg_a47IGXmdqJ0rKv7UM-",
+      "Description": "War breaks out in Germany in 1914. Paul Bäumer and his classmates quickly enlist in the army to serve their fatherland. No sooner are they drafted than the first images from the battlefield show them the reality of war.",
+      "Category": "Drama",
+      "id": 35
+    }
+  ],
+  "Categories": [
+    {
+      "id": 1,
+      "Name": "Action"
+    },
+    {
+      "id": 2,
+      "Name": "Adventure"
+    },
+    {
+      "id": 3,
+      "Name": "Animation"
+    },
+    {
+      "id": 4,
+      "Name": "Comedy"
+    },
+    {
+      "id": 5,
+      "Name": "Drama"
+    },
+    {
+      "id": 6,
+      "Name": "History"
+    },
+    {
+      "id": 7,
+      "Name": "Horror"
+    },
+    {
+      "Name": "Thriller",
+      "id": 8
+    },
+    {
+      "Name": "Mystery",
+      "id": 9
+    },
+    {
+      "Name": "Crime",
+      "id": 10
+    },
+    {
+      "Name": "Fantasy",
+      "id": 11
+    },
+    {
+      "Name": "Romance",
+      "id": 12
+    },
+    {
+      "Name": "Sports",
+      "id": 13
+    },
+    {
+      "Name": "War",
+      "id": 14
+    }
+  ],
+  "Admin": [
+    {
+      "name": "mustafa",
+      "email": "mustafa@gmail.com",
+      "password": "admin",
+      "id": 1
+    }
+  ],
+  "Carousel": [
+    {
+      "id": 1,
+      "poster": "https://www.filmsxpress.com/images/Carousel/666/Avatar-TheWayofWater-temp-1400x444.png",
+      "title": "Avatar The way of Water",
+      "released": "2022"
+    },
+    {
+      "id": 2,
+      "poster": "https://www.filmsxpress.com/images/Carousel/666/glass-onion-banner-nov23-72ppi.png",
+      "title": "Glass Onion",
+      "released": "2022"
+    },
+    {
+      "id": 3,
+      "poster": "https://www.filmsxpress.com/images/Carousel/666/devotion-NP-1400x444.png",
+      "title": "Devotion",
+      "released": "2022"
+    },
+    {
+      "title": "Jumanji",
+      "released": "2022",
+      "poster": "https://i0.wp.com/elementsofmadness.com/wp-content/uploads/2017/12/24837376_885273394960542_4939573286708160428_o.jpg?fit=1200%2C400&ssl=1",
+      "id": 4
+    },
+    {
+      "title": "Wednesday",
+      "released": "2022",
+      "poster": "https://salenhanh.com/wp-content/uploads/2022/12/wednesday.jpg",
+      "id": 5
+    }
+  ],
+  "Messages": [
+    {
+      "id": 1,
+      "fullName": "mustafa nazari",
+      "email": "mustafa@gmail.com",
+      "message": "work hard!"
+    },
+    {
+      "fullName": "ahmed yousuf",
+      "email": "google@gmail.com",
+      "message": "tell us what you think!",
+      "id": 2
+    },
+    {
+      "fullName": "mustafa",
+      "email": "hello2@gmail.com",
+      "message": "hello world",
+      "id": 3
+    },
+    {
+      "fullName": "fgsdg",
+      "email": "Ali@gamil.com",
+      "message": "dsfafdsa",
+      "id": 4
+    }
+  ]
+}

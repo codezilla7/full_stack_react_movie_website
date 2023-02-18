@@ -1,0 +1,145 @@
+.navbar {
+    background-color: #262B36;
+}
+
+#offcanvasNavbar {
+    background-color: #262B36;
+}
+
+.navbar-toggler-icon {
+    fill: red;
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+#searchInp {
+    background-color: #1E222B;
+    color: #A9ABB8;
+    border: 1px solid #A9ABB8;
+    border-radius: 10px;
+}
+
+#searchBt {
+    border-radius: 10px;
+}
+
+.dropdown-menu {
+    background-color: #1E222B;
+}
+
+.dropdown-item {
+    color: white;
+    opacity: 80%;
+}
+
+.dropdown-item:hover {
+    color: #FFCA3A;
+    background-color: #1E222B;
+}
+
+.catItem{
+    display: block;
+    color: white;
+    opacity: 80%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.catItem:hover{
+    color: #FFCA3A;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.bi-list {
+    color: white;
+    font-size: 30px;
+}
+
+.brand-name {
+    color: white;
+    font-family: 'Monoton', cursive;
+    text-decoration: none;
+    font-size: 32px;
+    margin-right: 55px;
+}
+
+.brand-name:hover {
+    color: #62ACB5;
+}
+
+.navButtons {
+    color: #A9ABB8;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navButtons:hover {
+    color: #98C1D9;
+}
+
+.navButtons:active {
+    font-size: 17px;
+}
+
+.bi-x-lg{
+    color: white;
+    border: none;
+    font-size: 25px;
+    background: none;
+}
+
+#searchInp {
+    border: none;
+    border-bottom: 1px solid #A9ABB8;
+    background-color: #262B36;
+    border-radius: 0px;
+    text-align: center;
+    color: #DFDFDF;
+}
+
+#searchInp:focus::placeholder {
+    color: #DFDFDF;
+  }
+
+#searchInp:focus {
+    border-bottom: 2px solid #DFDFDF;
+    
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    #dropdown {
+        display: none;
+    }
+    #searchBt {
+        margin-left: 10px;
+    }
+    #searchInp {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .dropdown-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #A9ABB8;
+    }
+
+    .dropdown-toggle:focus {
+        color: #28a745;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .brand-name {
+        font-size: 25px;
+    }
+}
