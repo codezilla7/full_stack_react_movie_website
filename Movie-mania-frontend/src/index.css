@@ -695,8 +695,8 @@ code {
   .movies-poster {
     height: 150px;
   }
-  .movies-detail {
-    
+  .movies-main-div {
+    width: 100%;
   }
   .movies-title {
     font-size: 13px;

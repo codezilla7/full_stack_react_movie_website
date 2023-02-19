@@ -61,7 +61,14 @@ export default function Navbar() {
   const handleSearch = (e) => {
     e.preventDefault()
     if(!search) {
-      return;
+      axios
+      .get(`http://localhost:8000/movies`)
+      .then(response => {
+        dispatch({type: 'updateCat' , payload: response.data})
+      })
+      .catch(error=>{
+        setError(error.message)
+      })
     }
     axios
     .get(`http://localhost:8000/movies`)
@@ -123,7 +130,7 @@ export default function Navbar() {
             </ul>
             <form onSubmit={handleSearch} className="d-flex align-items-center" role="search">
               <input onKeyUp={(e) => {setSearch(e.target.value)}} className="form-control me-2" id='searchInp' type="search" placeholder="Search" aria-label="Search"></input>
-              <button className="btn btn-outline-success" id='searchBt' type="submit"><i class="bi bi-search"></i></button>
+              <button className="btn btn-outline-success" data-bs-dismiss="offcanvas" id='searchBt' type="submit"><i class="bi bi-search"></i></button>
             </form>
           </div>
         </div>
