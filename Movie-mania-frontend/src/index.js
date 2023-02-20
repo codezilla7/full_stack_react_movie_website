@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { MoviesContextProvider } from './Contexts/MoviesContext';
 import { AuthContextProvider } from './Contexts/AuthContext';
+import { FavouritesContextProvider } from './Contexts/FavContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <FavouritesContextProvider>
     <AuthContextProvider>
     <MoviesContextProvider>
     <BrowserRouter>
@@ -18,6 +20,7 @@ root.render(
     </BrowserRouter>
     </MoviesContextProvider>
     </AuthContextProvider>
+    </FavouritesContextProvider>
   </React.StrictMode>
 );
 

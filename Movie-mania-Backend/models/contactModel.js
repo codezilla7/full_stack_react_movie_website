@@ -1,3 +1,4 @@
+const { number } = require('joi')
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
@@ -11,7 +12,11 @@ const contactSchema = new Schema({
         type: String,
         required: true
     },
-    message: {
+    socialmedia: {
+        type: String,
+        required: true
+    },
+    description: {
         type: String,
         required: true
     }

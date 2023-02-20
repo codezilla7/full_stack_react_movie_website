@@ -5,17 +5,18 @@ function validateSchema(body) {
     const schema = Joi.object({
         fullname: Joi.string().required(),
         email: Joi.string().email({ tlds: { allow: false } }),
-        message: Joi.string().min(25).required()
+        socialmedia: Joi.string(),
+        description: Joi.string().min(25).required()
     })
     return schema.validate(body)
 }
 
 const contactus = async (req,res) => {
-    const {fullname , email , message} = req.body
+    const {fullname , email , socialmedia , description} = req.body
     try{
         const {error} = validateSchema(req.body)
         if(!error){
-            const contact = await contacts.create({fullname,email,message})
+            const contact = await contacts.create({fullname,email,socialmedia,description})
             res.status(200).json(contact)
         } else {
             res.status(400).json({error: error && error.details[0].message})

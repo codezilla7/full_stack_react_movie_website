@@ -3,6 +3,7 @@ import '../Styles/Navbar.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import useMoviesContext from "../Hooks/useMoviesContext"
+import { Badge } from 'antd';
 
 export default function Navbar() {
   const { dispatch } = useMoviesContext()
@@ -12,7 +13,7 @@ export default function Navbar() {
   let [next, setNext] = useState('abc');
   let [movie, setMovie] = useState('');
   let [category, setCategory] = useState('')
-  const [search,setSearch] = useState('')
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     axios.get('http://localhost:8000/Categories')
@@ -60,29 +61,29 @@ export default function Navbar() {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    if(!search) {
+    if (!search) {
       axios
-      .get(`http://localhost:8000/movies`)
-      .then(response => {
-        dispatch({type: 'updateCat' , payload: response.data})
-      })
-      .catch(error=>{
-        setError(error.message)
-      })
+        .get(`http://localhost:8000/movies`)
+        .then(response => {
+          dispatch({ type: 'search', payload: response.data })
+        })
+        .catch(error => {
+          setError(error.message)
+        })
     }
     axios
-    .get(`http://localhost:8000/movies`)
-    .then(response => {
-      const searchedMovies = response.data.filter(
-        movie => movie.Title.toUpperCase().includes(search.toUpperCase())
-      );
-      dispatch({ type: 'updateCat', payload: searchedMovies });
-      console.log(search)
-      console.log(searchedMovies)
-    })
-    .catch(error => {
-      setError(error.message);
-    });
+      .get(`http://localhost:8000/movies`)
+      .then(response => {
+        const searchedMovies = response.data.filter(
+          movie => movie.Title.toUpperCase().includes(search.toUpperCase())
+        );
+        dispatch({ type: 'search', payload: searchedMovies });
+        console.log(search)
+        console.log(searchedMovies)
+      })
+      .catch(error => {
+        setError(error.message);
+      });
   }
 
   return (
@@ -103,7 +104,9 @@ export default function Navbar() {
                 <Link className='navButtons' to='/contactus'>Contact us</Link>
               </li>
               <li className="nav-item">
-                <Link className='navButtons' to='/favourites'>Favourites</Link>
+                <Badge count={5} title="Total movies" size='small' style={{backgroundColor:"cadetblue"}}>
+                  <Link className='navButtons' to='/favourites'>Favourites</Link>
+                </Badge>
               </li>
               <li className="nav-item dropdown mt-0 " id='dropdown'>
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -128,8 +131,8 @@ export default function Navbar() {
                 </ul>
               </li>
             </ul>
-            <form onSubmit={handleSearch} className="d-flex align-items-center" role="search">
-              <input onKeyUp={(e) => {setSearch(e.target.value)}} className="form-control me-2" id='searchInp' type="search" placeholder="Search" aria-label="Search"></input>
+            <form onSubmit={handleSearch} id='search1' className="d-flex align-items-center" role="search">
+              <input onChange={(e) => { setSearch(e.target.value) }} className="form-control me-2" id='searchInp' type="search" placeholder="Search" aria-label="Search"></input>
               <button className="btn btn-outline-success" data-bs-dismiss="offcanvas" id='searchBt' type="submit"><i class="bi bi-search"></i></button>
             </form>
           </div>

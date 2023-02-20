@@ -1,11 +1,13 @@
-import{ createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 export const MoviesContext = createContext();
 
 export const moviesReducer = (state, action) => {
   switch (action.type) {
     case "updateCat":
-      return {movies: action.payload };
+      return { movies: action.payload };
+    case "search":
+      return { movies: action.payload }
     default:
       return state;
   }

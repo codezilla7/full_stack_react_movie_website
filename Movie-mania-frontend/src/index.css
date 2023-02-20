@@ -427,6 +427,11 @@ code {
 
   .contact-form-div {
     width: 400px;
+    border-radius: 10px;
+  }
+
+  .form-div {
+    border-radius: 10px
   }
 
   .contact-form {
@@ -707,5 +712,12 @@ code {
   }
   .movies-year {
     font-size: 9px;
+  }
+  .form-div{
+    border-radius: 10px;
+  }
+  .contact-form-div {
+    width: 315px;
+    border-radius: 10px;
   }
 }
