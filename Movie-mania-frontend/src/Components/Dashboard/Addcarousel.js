@@ -1,47 +1,70 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
+import Loader from './Loader';
 
 export default function Addcarousel() {
-    let [title, setTitle] = useState("");
-    let [released, setReleased] = useState("");
-    let [poster, setPoster] = useState("");
-    
-  
-    let navigate = useNavigate();
-    
-  
-    let handleClick = (e) => {
-      e.preventDefault();
-      let all = { title, released,  poster };
+    let [Title, setTitle] = useState("");
+    let [Description, setDescription] = useState("");
+    let [Year, setYear] = useState("");
+    let [Runtime, setRuntime] = useState("");
+    let [Poster, setPoster] = useState("");
+    let [Category, setCategory] = useState();
+    let [data, setdata] = useState("");
+    let [pending, setpending] = useState("");
+    let [error, seterror] = useState("");
 
-      if(title, released, poster === ''){
-        alert('Input section cannot be empty')
-      }
-      else{
-          fetch("http://localhost:8000/Carousel", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(all),
-          })
-            .then((data) => {
-              navigate("/dashboard/viewcarousel");
+    let navigate = useNavigate();
+
+
+    let handleClick = (e) => {
+        e.preventDefault();
+        let all = { Title, Year, Runtime, Poster, Description, Category };
+
+        if (Title, Year, Runtime, Poster, Description === '') {
+            alert('input cannot be empty')
+        }
+        else {
+            axios.post("http://localhost:8000/slider", all, {
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+                .then(response => {
+                    navigate("/dashboard/viewcarousel");
+                })
+                .catch(error => {
+                    console.log(error.message);
+                });
+        }
+
+    };
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/categories")
+            .then((response) => {
+                setdata(response.data);
+                setCategory(response.data[0].Name)
+                setpending(false);
             })
             .catch((error) => {
-              console.log(error.message);
+                seterror(error.message);
+                setpending(false);
             });
-      }
-  
-    };
-
+    }, []);
     return (
-        <div style={{ display: "flex" , justifyContent: "center" , alignItems: "center"}}>
-            <div style={{ width: "800px", margin: "20px", backgroundColor: "#C6D8E4"}}>
+        <div style={{ display: "flex" }}>
+            {pending && <h1>{<Loader></Loader>}</h1>}
+            <div style={{ margin: "auto", width: "800px", padding: "20px", }}>
                 <div className="card-header bg-dark">
-                    <h3 className="card-title">Add Movie to Carousel</h3>
+                    <h3 className="card-title">Add Movie for Slider</h3>
                 </div>
                 <form
                     onSubmit={(e) => {
                         handleClick(e);
+                    }}
+                    style={{
+                        backgroundColor: '#C6D8E4'
                     }}
                 >
                     <div className="card-body">
@@ -54,7 +77,7 @@ export default function Addcarousel() {
                                     setTitle(e.target.value);
                                 }}
                                 id="exampleInputEmail1"
-                                placeholder="Enter movie Name"
+                                placeholder="Enter movie Title"
                             />
                         </div>
                         <div className="form-group">
@@ -63,11 +86,34 @@ export default function Addcarousel() {
                                 type="text"
                                 className="form-control"
                                 onChange={(e) => {
-                                    setReleased(e.target.value);
+                                    setYear(e.target.value);
                                 }}
                                 id="exampleInputEmail1"
                                 placeholder="Enter movie year"
                             />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="exampleInputEmail1">Movie Runtime</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                onChange={(e) => {
+                                    setRuntime(e.target.value);
+                                }}
+                                id="exampleInputEmail1"
+                                placeholder="Enter movie Runtime"
+                            />
+                        </div>
+                        <div
+                            class="form-group"
+                            onChange={(e) => {
+                                setCategory(e.target.value);
+                            }}
+                        >
+                            <label>Select Category</label>
+                            <select class="form-control">
+                                {data && data.map((categories) => (<option>{categories.Name}</option>))}
+                            </select>
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Movie poster</label>
@@ -81,6 +127,20 @@ export default function Addcarousel() {
                                 placeholder="Enter movie poster URL"
                             />
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="exampleInputEmail1">Movie Description</label>
+                            <textarea
+                                type="text"
+                                className="form-control"
+                                cols="30"
+                                rows="10"
+                                onChange={(e) => {
+                                    setDescription(e.target.value);
+                                }}
+                                id="exampleInputEmail1"
+                                placeholder="Enter movie Description..."
+                            />
+                        </div>
                     </div>
                     {/* /.card-body */}
                     <div className="card-footer">
@@ -90,6 +150,7 @@ export default function Addcarousel() {
                     </div>
                 </form>
             </div>
+            {error && <h1>{error}</h1>}
         </div>
     )
 }

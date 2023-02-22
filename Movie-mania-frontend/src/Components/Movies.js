@@ -50,7 +50,7 @@ export default function Movies() {
               })
             )}
           </div>
-          {currentMovies.length < moviesPerPage ? null : (
+          {currentMovies.length === 0 ? null : (
             <Pagination
               current={current}
               onChange={onChange}

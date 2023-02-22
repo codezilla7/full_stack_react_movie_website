@@ -11,40 +11,38 @@ export default function SliderHome() {
     let [error, seterror] = useState('');
     let [pending, setpending] = useState(true);
 
-    const getData = async (url) => {
-        try {
-            const res = await axios.get(url)
-            setdata(res.data)
+    useEffect(() => {
+        axios
+        .get("http://localhost:8000/slider")
+        .then(response => {
+            setdata(response.data)
+            console.log(data)
             setpending(false)
-        } catch (error) {
+        })
+        .catch(error => {
             seterror(error.message)
             setpending(false)
-        }
-    }
-    useEffect(() => {
-        getData("http://localhost:8000/movies")
+        })
     }, [])
 
     const settings = {
+        className: "",
         dots: true,
-        speed: 500,
-        slidesToScroll: 3,
-        className: "center",
-        centerMode: true,
-        arrows: false,
-        autoplay: true,
         infinite: true,
-        centerPadding: "60px",
-        slidesToShow: 7
-      };
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: false,
+        adaptiveHeight: true
+    };
     return (
         <div className="main-slider" >
             {pending && <h1>Loading....</h1>}
             <Slider {...settings}>
                 {
-                    data && data.slice(0,8).map(movie => {
+                    data.map(movie => {
                         return (
-                            <div className="carousel-item" style={{margin: '20px'}} >
+                            <div className="carousel-item" style={{ margin: '20px' }} >
                                 <img src={movie.Poster} className='slider-poster'></img>
                             </div>
                         )

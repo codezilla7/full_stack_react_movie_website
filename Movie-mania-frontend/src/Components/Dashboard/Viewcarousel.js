@@ -8,7 +8,7 @@ export default function Viewcarousel() {
     let [error, seterror] = useState("");
     let [pending, setpending] = useState(true);
     let [edit, setedit] = useState("");
-    
+
     const getData = async(url) => {
         try{
             const res = await axios.get(url)
@@ -20,12 +20,13 @@ export default function Viewcarousel() {
         }
     }
     useEffect(() => {
-        getData("http://localhost:8000/Carousel")
+        getData("http://localhost:8000/slider")
     },[edit])
-  
+    
+
     let handleDelete = (id) => {
         setedit("");
-        axios.delete(`http://localhost:8000/Carousel/${id}`)
+        axios.delete(`http://localhost:8000/slider/${id}`)
             .then((del) => {
                 setedit("changed");
             })
@@ -40,7 +41,7 @@ export default function Viewcarousel() {
                     <div className="col-12">
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">All movies</h3>
+                                <h3 className="card-title">All movies for slider</h3>
                                 <div className="card-tools">
                                     <div
                                         className="input-group input-group-sm"
@@ -56,7 +57,10 @@ export default function Viewcarousel() {
                                             <th>ID</th>
                                             <th>Title</th>
                                             <th>Released</th>
+                                            <th>Runtime</th>
+                                            <th>Category</th>
                                             <th>Poster</th>
+                                            <th>Description</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -64,18 +68,26 @@ export default function Viewcarousel() {
                                         {data &&
                                             data.map((movie) => (
                                                 <tr className="w-100">
-                                                    <td>{movie.id}</td>
-                                                    <td>{movie.title}</td>
-                                                    <td>{movie.released}</td>
+                                                    <td>{movie._id}</td>
+                                                    <td>{movie.Title}</td>
+                                                    <td>{movie.Year}</td>
+                                                    <td>{movie.Runtime}</td>
+                                                    <td>{movie.Category}</td>
                                                     <td>
-                                                        <a href={movie.poster} target="_blank">
+                                                        <a href={movie.Poster} target="_blank">
                                                             View Poster
                                                         </a>
                                                     </td>
-                                                    <td style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{movie.Description}</td>
                                                     <td>
                                                         <Link
-                                                            to={`/dashboard/editcarousel/${movie.id}`}
+                                                        to={`/dashboard/viewmoviedes/${movie._id}`}
+                                                    >
+                                                        Read Description
+                                                        </Link>
+                                                    </td>
+                                                    <td>
+                                                        <Link
+                                                            to={`/dashboard/editcarousel/${movie._id}`}
                                                             className="btn btn-primary"
                                                         >
                                                             Edit

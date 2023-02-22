@@ -6,6 +6,7 @@ const MovieRoutes = require("./routes/Movies")
 const CategoryRoutes = require("./routes/Categories")
 const UserRoutes = require("./routes/User")
 const contactsRoutes = require("./routes/Contactus")
+const sliderRoutes = require('./routes/Slider')
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use('/movies' , MovieRoutes)
 app.use('/categories' , CategoryRoutes)
 app.use('/users', UserRoutes)
 app.use('/' , contactsRoutes)
+app.use('/slider' , sliderRoutes)
 
 
 // connecting to database
