@@ -27,7 +27,11 @@ export default function Editcarousel() {
     }
 }
 useEffect(() => {
-    getData(`http://localhost:8000/slider/${id}`)
+    axios
+    .get(`http://localhost:8000/slider/${id}`)
+    .then(response=>{
+      
+    })
 },[])
 
   let handleSubmit = (e) => {

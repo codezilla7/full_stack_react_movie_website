@@ -35,13 +35,18 @@ code {
 .slider-poster {
   height: 290px;
   margin: 0 auto;
-  border-radius: 5px;
 }
 
 .main-slider {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #262B36;
+  background-color: #1E222B;
+}
+
+.slick-slide {
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* Slider Section Ends */
@@ -223,7 +228,7 @@ code {
   color: #FFCA3A;
 }
 
-.Categories-name:active{
+.Categories-name:active {
   font-size: 15px;
 }
 
@@ -512,13 +517,21 @@ code {
   }
 }
 
+@media screen and (max-width: 900px) {
+
+  .slider-poster {
+    height: 200px;
+  }
+
+}
+
 @media screen and (max-width: 800px) {
 
-  .md-mother-div{
+  .md-mother-div {
     width: 500px;
   }
 
-  .md-video{
+  .md-video {
     width: 600px;
     height: 350px;
   }
@@ -535,14 +548,17 @@ code {
   .movies-title {
     font-size: 16px;
   }
+
   .movies-runtime {
     font-size: 10px;
   }
+
   .movies-year {
     font-size: 10px;
   }
 
 }
+
 
 @media screen and (min-width: 800px) {
   .movies-main-div {
@@ -551,8 +567,8 @@ code {
 }
 
 @media screen and (max-width: 600px) {
-  
-  .md-video{
+
+  .md-video {
     width: 400px;
     height: 275px;
   }
@@ -569,13 +585,18 @@ code {
   .movies-title {
     font-size: 14px;
   }
+
   .movies-runtime {
     font-size: 9px;
   }
+
   .movies-year {
     font-size: 9px;
   }
 
+  .slider-poster {
+    height: 130px;
+  }
 }
 
 /* movie details section ends */
@@ -693,29 +714,37 @@ code {
   .nowstreaming {
     font-size: 44px;
   }
+
   .movies-card {
-   width: 31%;
-   margin: 1px;
+    width: 31%;
+    margin: 1px;
   }
+
   .movies-poster {
     height: 150px;
   }
+
   .movies-main-div {
     width: 100%;
   }
+
   .movies-title {
     font-size: 13px;
   }
+
   .movies-runtime {
     font-size: 9px;
     display: none;
   }
+
   .movies-year {
     font-size: 9px;
   }
-  .form-div{
+
+  .form-div {
     border-radius: 10px;
   }
+
   .contact-form-div {
     width: 315px;
     border-radius: 10px;

@@ -26,13 +26,40 @@ export default function Moviesdetails() {
         }
     }, [id]);
 
+    if(!data) {
+        try{
+            axios.get(`http://localhost:8000/slider/${id}`)
+            .then(response => {
+                setdata(response.data)
+                setpending(false)
+            })
+        } catch (error) {
+            seterror(error.message)
+            setpending(false)
+        }
+    }
+
     const handleClick = () => {
-        axios.get(`http://localhost:8000/movies/${id}`)
-        .then(response => {
-            const addToFav = response.data
-            dispatch({type:'add-movie' , payload:addToFav})
-            console.log(addToFav)
-        })
+        try{
+            axios.get(`http://localhost:8000/movies/${id}`)
+            .then(response => {
+                const addToFav = response.data
+                if(addToFav) {
+                    dispatch({type:'add-movie' , payload:addToFav})
+                }
+            }).catch(error => {
+                axios
+                .get(`http://localhost:8000/slider/${id}`)
+                .then(response => {
+                    const addToFav =response.data
+                    if(addToFav) {
+                        dispatch({type:'add-movie' , payload:addToFav})
+                    }
+                })
+            })
+        } catch (error) {
+            seterror(error.message)
+        }
     }
     return (
         <>

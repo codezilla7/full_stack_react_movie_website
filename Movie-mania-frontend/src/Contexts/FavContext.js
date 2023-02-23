@@ -9,12 +9,16 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add-movie':
-      return { ...state, movies: [...state.movies, action.payload] };
+      const movieToAdd = action.payload;
+      const movieExists = state.movies.some(movie => movie._id === movieToAdd._id);
+      if (!movieExists) {
+        return { ...state, movies: [...state.movies, movieToAdd] };
+      }
+      return state;
     default:
       return state;
   }
 };
-
 
 export const FavouritesContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);

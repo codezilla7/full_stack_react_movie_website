@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export default function SliderHome() {
 
@@ -26,25 +27,25 @@ export default function SliderHome() {
     }, [])
 
     const settings = {
-        className: "",
+        className: "center",
+        centerMode: true,
         dots: true,
         infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         autoplay: false,
-        adaptiveHeight: true
+        centerPadding: "60px",
+        slidesToShow: 3,
     };
     return (
         <div className="main-slider" >
             {pending && <h1>Loading....</h1>}
             <Slider {...settings}>
                 {
-                    data.map(movie => {
+                   data && data.map(movie => {
                         return (
-                            <div className="carousel-item" style={{ margin: '20px' }} >
+                            <Link to={`/moviedetails/${movie._id}`} className="carousel-item" style={{ margin: '20px' }} >
                                 <img src={movie.Poster} className='slider-poster'></img>
-                            </div>
+                            </Link>
                         )
                     })
                 }
