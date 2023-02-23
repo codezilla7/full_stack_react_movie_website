@@ -1,56 +1,69 @@
 import React from "react";
-import Slider from "react-slick";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode, Navigation, Pagination, Mousewheel, Keyboard, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function SliderHome() {
 
-    let [data, setdata] = useState('');
+    let [data, setdata] = useState([]);
     let [error, seterror] = useState('');
     let [pending, setpending] = useState(true);
 
     useEffect(() => {
         axios
-        .get("http://localhost:8000/slider")
-        .then(response => {
-            setdata(response.data)
-            console.log(data)
-            setpending(false)
-        })
-        .catch(error => {
-            seterror(error.message)
-            setpending(false)
-        })
-    }, [])
-
-    const settings = {
-        className: "center",
-        centerMode: true,
-        dots: true,
-        infinite: true,
-        arrows: true,
-        autoplay: false,
-        centerPadding: "60px",
-        slidesToShow: 3,
-    };
+            .get("http://localhost:8000/slider")
+            .then(response => {
+                setdata(response.data)
+                console.log(data)
+                setpending(false)
+            })
+            .catch(error => {
+                seterror(error.message)
+                setpending(false)
+            })
+    }, [data])
     return (
-        <div className="main-slider" >
-            {pending && <h1>Loading....</h1>}
-            <Slider {...settings}>
+        <>
+            <Swiper
+                style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                }}
+                cssMode={true}
+                mousewheel={true}
+                keyboard={true}
+                modules={[Autoplay, FreeMode, Navigation, Pagination, Mousewheel, Keyboard, Thumbs]}
+                className="mySwiper"
+                slidesPerView={"auto"}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+            >
+                {pending && <h1>Loading...</h1>}
                 {
-                   data && data.map(movie => {
+                    data && data.map(movie => {
                         return (
-                            <Link to={`/moviedetails/${movie._id}`} className="carousel-item" style={{ margin: '20px' }} >
-                                <img src={movie.Poster} className='slider-poster'></img>
-                            </Link>
+                            <SwiperSlide className="slick-slide">
+                                <Link to={`/moviedetails/${movie._id}`}>
+                                    <img src={movie.Poster} alt='error' className="slider-poster"></img>
+                                </Link>
+                            </SwiperSlide>
                         )
                     })
                 }
-            </Slider>
-            {error && <h1>{error}</h1>}
-        </div>
+                {error && <h1>{error.message}</h1>}
+            </Swiper>
+        </>
     );
 }

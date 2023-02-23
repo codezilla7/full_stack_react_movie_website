@@ -37,7 +37,7 @@ code {
   margin: 0 auto;
 }
 
-.main-slider {
+.mySwiper{
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #1E222B;
@@ -743,6 +743,9 @@ code {
 
   .form-div {
     border-radius: 10px;
+  }
+  .contact-div {
+    height: 100vh;
   }
 
   .contact-form-div {
