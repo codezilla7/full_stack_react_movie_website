@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import useMoviesContext from "../Hooks/useMoviesContext"
 import { Badge } from 'antd';
+import useFavContext from '../Hooks/useFavContext';
 
 export default function Navbar() {
   const { dispatch } = useMoviesContext()
+  const { state } = useFavContext()
   let [data, setData] = useState('');
   let [pending, setPending] = useState(true);
   let [error, setError] = useState('');
@@ -104,7 +106,7 @@ export default function Navbar() {
                 <Link className='navButtons' to='/contactus'>Contact us</Link>
               </li>
               <li className="nav-item">
-                <Badge count={5} title="Total movies" size='small' style={{backgroundColor:"cadetblue"}}>
+                <Badge count={state.movies.length} showZero title="Total movies" size='small' style={{backgroundColor:"cadetblue"}}>
                   <Link className='navButtons' to='/favourites'>Favourites</Link>
                 </Badge>
               </li>

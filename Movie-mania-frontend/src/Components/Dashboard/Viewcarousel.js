@@ -2,15 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import { Typography } from "antd";
 
 export default function Viewcarousel() {
     let [data, setdata] = useState("");
     let [error, seterror] = useState("");
     let [pending, setpending] = useState(true);
     let [edit, setedit] = useState("");
+    const { Paragraph } = Typography;
 
-    const getData = async(url) => {
-        try{
+    const getData = async (url) => {
+        try {
             const res = await axios.get(url)
             setdata(res.data)
             setpending(false)
@@ -21,8 +23,8 @@ export default function Viewcarousel() {
     }
     useEffect(() => {
         getData("http://localhost:8000/slider")
-    },[edit])
-    
+    }, [edit])
+
 
     let handleDelete = (id) => {
         setedit("");
@@ -66,9 +68,9 @@ export default function Viewcarousel() {
                                     <tbody>
                                         {pending && <Loader />}
                                         {data &&
-                                            data.map((movie) => (
+                                            data.map((movie, index) => (
                                                 <tr className="w-100">
-                                                    <td>{movie._id}</td>
+                                                    <td>{index}</td>
                                                     <td>{movie.Title}</td>
                                                     <td>{movie.Year}</td>
                                                     <td>{movie.Runtime}</td>
@@ -79,11 +81,10 @@ export default function Viewcarousel() {
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <Link
-                                                        to={`/dashboard/viewmoviedes/${movie._id}`}
-                                                    >
-                                                        Read Description
-                                                        </Link>
+                                                        <Paragraph ellipsis={{ rows: 0.9, expandable: true, symbol: 'open' }}
+                                                        >
+                                                            {movie.Description}
+                                                        </Paragraph>
                                                     </td>
                                                     <td>
                                                         <Link

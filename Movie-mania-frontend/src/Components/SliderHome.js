@@ -26,13 +26,14 @@ export default function SliderHome() {
                 seterror(error.message)
                 setpending(false)
             })
-    }, [data])
+    }, [])
     return (
         <>
             <Swiper
                 style={{
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
+                    margin:'20px'
                 }}
                 cssMode={true}
                 mousewheel={true}

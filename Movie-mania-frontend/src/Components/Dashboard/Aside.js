@@ -93,6 +93,12 @@ export default function Aside() {
                                     </Link>
                                 </li>
                             </ul>
+                            <li className="nav-item">
+                                    <Link to="/dashboard/viewcontacts" className="nav-link">
+                                    <i class="nav-icon pr-1 bi bi-eye-fill"></i>
+                                        <p>Contacts</p>
+                                    </Link>
+                            </li>
                         </li>
                     </ul>
                 </nav>

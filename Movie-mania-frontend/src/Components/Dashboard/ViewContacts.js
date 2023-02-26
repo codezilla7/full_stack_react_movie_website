@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import axios from "axios";
-import { Typography } from "antd";
+import { Button, Result } from 'antd';
 
 export default function Viewmovie() {
     const [data, setdata] = useState("");
     const [error, seterror] = useState("");
     const [pending, setpending] = useState(true);
     const [edit, setedit] = useState("");
-    const { Paragraph } = Typography;
 
     const getData = async(url) => {
         try{
@@ -22,13 +20,13 @@ export default function Viewmovie() {
         }
     }
     useEffect(() => {
-        getData("http://localhost:8000/movies")
+        getData("http://localhost:8000/contactus")
     },[edit])
     
 
     let handleDelete = (id) => {
         setedit("");
-        axios.delete(`http://localhost:8000/movies/${id}`)
+        axios.delete(`http://localhost:8000/contactus/${id}`)
             .then((del) => {
                 setedit("changed");
             })
@@ -43,7 +41,7 @@ export default function Viewmovie() {
                     <div className="col-12">
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">All movies</h3>
+                                <h3 className="card-title">All contacts</h3>
                                 <div className="card-tools">
                                     <div
                                         className="input-group input-group-sm"
@@ -57,47 +55,34 @@ export default function Viewmovie() {
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Released</th>
-                                            <th>Runtime</th>
-                                            <th>Category</th>
-                                            <th>Poster</th>
-                                            <th>Description</th>
+                                            <th>fullname</th>
+                                            <th>email</th>
+                                            <th>socialmedia</th>
+                                            <th>introduction</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {pending && <Loader />}
-                                        {data &&
-                                            data.map((movie , index) => (
+                                        {data ? 
+                                          <Result
+                                          style={{textAlign:'center'}}
+                                          title="No contacts at the moment"
+                                        /> : data &&
+                                            data.map((contact , index) => (
                                                 <tr className="w-100">
                                                     <td>{index}</td>
-                                                    <td>{movie.Title}</td>
-                                                    <td>{movie.Year}</td>
-                                                    <td>{movie.Runtime}</td>
-                                                    <td>{movie.Category}</td>
+                                                    <td>{contact.fullname}</td>
+                                                    <td>{contact.email}</td>
                                                     <td>
-                                                        <a href={movie.Poster} target="_blank">
-                                                            View Poster
+                                                        <a href={contact.socialmedia} rel='noreferrer' target="_blank">
+                                                            {contact.socialmedia}
                                                         </a>
                                                     </td>
-                                                    <td>
-                                                        <Paragraph ellipsis={{ rows:0.9, expandable: true, symbol: 'more' }}
-                                                    >
-                                                        {movie.Description}
-                                                        </Paragraph>
-                                                    </td>
-                                                    <td>
-                                                        <Link
-                                                            to={`/dashboard/editmovie/${movie._id}`}
-                                                            className="btn btn-primary"
-                                                        >
-                                                            Edit
-                                                        </Link>
-                                                    </td>
+                                                    <td>{contact.description}</td>
                                                     <td>
                                                         <button
                                                             onClick={() => {
-                                                                handleDelete(movie._id);
+                                                                handleDelete(contact._id);
                                                             }}
                                                             className="btn btn-danger"
                                                         >

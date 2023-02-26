@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer'
 import Navbar from './Navbar'
 import "../Styles/Favourites.css"
-import { Pagination } from 'antd';
+import { Pagination , Button } from 'antd';
+import {CaretRightOutlined} from '@ant-design/icons'
 import useFavContext from '../Hooks/useFavContext';
 
 export default function Favourites() {
-    const {state} = useFavContext()
+    const { state, dispatch } = useFavContext()
     const [current, setCurrent] = useState(1);
     const moviesPerPage = 27
     const movies = state.movies
@@ -20,6 +21,11 @@ export default function Favourites() {
         console.log(page);
         setCurrent(page);
     };
+
+    const handleRemove = (e) => {
+        console.log(dispatch)
+        dispatch({type:'remove-movie' , payload:e})
+    }
     const movie = state.movies
     return (
         <>
@@ -40,7 +46,7 @@ export default function Favourites() {
                     ) : (
                         currentMovies.map((film) => {
                             return (
-                                <Link to={`/moviedetails/${film._id}`} className='movies-card'>
+                                <div className='movies-card'>
                                     <img
                                         alt={`couldn't load`}
                                         src={film.Poster}
@@ -49,21 +55,24 @@ export default function Favourites() {
                                     <div className='movies-detail'>
                                         <p className='movies-title'>{film.Title}</p>
                                         <p className='movies-runtime'>Runtime: {film.Runtime}</p>
-                                        <p className='movies-year'>Released: {film.Year}</p>
+                                        <p className='movies-year'>Released: {film.Year}</p>       
                                     </div>
-                                </Link>
+                                        <Button onClick={()=>{handleRemove(film._id)}} type="primary" danger>
+                                            remove
+                                        </Button>
+                                        <Link to={`/moviedetails/${film._id}`}><Button type="primary">Watch <CaretRightOutlined /></Button></Link>
+                                </div>
                             );
                         })
                     )}
                 </div>
-                {currentMovies.length < moviesPerPage ? null : (
                     <Pagination
                         current={current}
                         onChange={onChange}
                         total={movies.length}
                         pageSize={moviesPerPage}
+                        hideOnSinglePage
                     />
-                )}
             </div>
             <Footer></Footer>
         </>

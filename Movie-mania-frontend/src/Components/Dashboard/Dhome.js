@@ -11,10 +11,10 @@ const EditCategory = React.lazy(() => import('./Editcategory'))
 const Addmovies = React.lazy(() => import('./Addmovies'))
 const Viewmovie = React.lazy(() => import('./Viewmovie'))
 const Editmovie = React.lazy(() => import('./Editmovie'))
-const Viewmoviedes = React.lazy(() => import('./Viewmoviedes'))
 const Addcarousel = React.lazy(() => import('./Addcarousel'))
 const Viewcarousel = React.lazy(() => import('./Viewcarousel'))
 const Editcarousel = React.lazy(() => import('./Editcarousel'))
+const ViewContacts = React.lazy(() => import('./ViewContacts'))
 export default function Dhome() {
   return (
     <>
@@ -26,13 +26,13 @@ export default function Dhome() {
                 <Route path='/addmovie' element={<Addmovies></Addmovies>} />
                 <Route path='/viewmovie' element={<Viewmovie></Viewmovie>} />
                 <Route path='/editmovie/:id' element={<Editmovie></Editmovie>} />
-                <Route path='/viewmoviedes/:id' element={<Viewmoviedes></Viewmoviedes>} />
                 <Route path='/addcategory' element={<AddCategory></AddCategory>} />
                 <Route path='/viewcategory' element={<ViewCategory></ViewCategory>} />
                 <Route path='/editcategory/:id' element={<EditCategory></EditCategory>} />
                 <Route path='/addcarousel' element={<Addcarousel></Addcarousel>} />
                 <Route path='/viewcarousel' element={<Viewcarousel></Viewcarousel>} />
                 <Route path='/editcarousel/:id' element={<Editcarousel></Editcarousel>} />
+                <Route path='/viewcontacts' element={<ViewContacts></ViewContacts>} />
             </Routes>
         </Suspense>
     </div>

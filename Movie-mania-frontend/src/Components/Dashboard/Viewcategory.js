@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 
+
 export default function Viewcategory() {
   let [update, setupdate] = useState('')
   let [data, setdata] = useState('')
   let [pending, setpending] = useState(true)
   let [error, seterror] = useState('')
+
   const getData = async (url) => {
     try {
       const res = await axios.get(url)
@@ -35,7 +37,6 @@ export default function Viewcategory() {
   return (
     <div>
       <>
-
 
         <div className="container">
           <div className="row">
@@ -72,7 +73,7 @@ export default function Viewcategory() {
                             <td>
                               <button
                                 onClick={() => {
-                                  handleDelete(category._id);
+                                  handleDelete(category._id)
                                 }}
                                 className="btn btn-danger"
                               >

@@ -15,6 +15,10 @@ const reducer = (state, action) => {
         return { ...state, movies: [...state.movies, movieToAdd] };
       }
       return state;
+    case 'remove-movie':
+      const movieToRemoveId = action.payload;
+      const updatedMovies = state.movies.filter(movie => movie._id !== movieToRemoveId);
+      return { ...state, movies: updatedMovies };
     default:
       return state;
   }

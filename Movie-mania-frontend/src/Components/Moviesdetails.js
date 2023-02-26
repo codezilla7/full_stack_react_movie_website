@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 
 export default function Moviesdetails() {
     let { id } = useParams();
+    const [isClicked, setisClicked] = useState(false)
     let [data, setdata] = useState('');
     let [error, seterror] = useState('');
     let [pending, setpending] = useState(true);
@@ -26,13 +27,13 @@ export default function Moviesdetails() {
         }
     }, [id]);
 
-    if(!data) {
-        try{
+    if (!data) {
+        try {
             axios.get(`http://localhost:8000/slider/${id}`)
-            .then(response => {
-                setdata(response.data)
-                setpending(false)
-            })
+                .then(response => {
+                    setdata(response.data)
+                    setpending(false)
+                })
         } catch (error) {
             seterror(error.message)
             setpending(false)
@@ -40,23 +41,25 @@ export default function Moviesdetails() {
     }
 
     const handleClick = () => {
-        try{
+        try {
             axios.get(`http://localhost:8000/movies/${id}`)
             .then(response => {
-                const addToFav = response.data
-                if(addToFav) {
-                    dispatch({type:'add-movie' , payload:addToFav})
-                }
-            }).catch(error => {
-                axios
-                .get(`http://localhost:8000/slider/${id}`)
-                .then(response => {
-                    const addToFav =response.data
-                    if(addToFav) {
-                        dispatch({type:'add-movie' , payload:addToFav})
+                    setisClicked(true)
+                    const addToFav = response.data
+                    if (addToFav) {
+                        dispatch({ type: 'add-movie', payload: addToFav })
                     }
+                }).catch(error => {
+                    axios
+                        .get(`http://localhost:8000/slider/${id}`)
+                        .then(response => {
+                            const addToFav = response.data
+
+                            if (addToFav) {
+                                dispatch({ type: 'add-movie', payload: addToFav })
+                            }
+                        })
                 })
-            })
         } catch (error) {
             seterror(error.message)
         }
@@ -81,7 +84,9 @@ export default function Moviesdetails() {
                                 <p className='md-runtime'>Runtime: {data.Runtime}</p>
                                 <p className='md-released'>Released: {data.Year}</p>
                                 <div className='md-buttons'>
-                                    <button onClick={handleClick} className='md-add' ><i class="bi bi-plus-lg"></i> Add</button>
+                                    <button onClick={handleClick} className={`md-add ${isClicked ? 'added' : ''}`}>
+                                        {isClicked ? 'Added' : <><i class="bi bi-plus-lg"></i> Add</>}
+                                    </button>
                                 </div>
                             </div>
                         </div>

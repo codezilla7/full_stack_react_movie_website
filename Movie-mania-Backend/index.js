@@ -24,7 +24,7 @@ app.use((req,res,next)=>{
 app.use('/movies' , MovieRoutes)
 app.use('/categories' , CategoryRoutes)
 app.use('/users', UserRoutes)
-app.use('/' , contactsRoutes)
+app.use('/contactus' , contactsRoutes)
 app.use('/slider' , sliderRoutes)
 
 
